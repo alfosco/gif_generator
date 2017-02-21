@@ -1,0 +1,9 @@
+<h1><%= @category.title %></h1>
+
+<ul>
+  <% @category.gifs.each do |gif| %>
+    <div>
+      <img src= "<%= gif.image_path %>">
+    </div>
+  <% end %>
+</ul>

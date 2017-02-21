@@ -1,0 +1,7 @@
+<h1><%= @gif.title %></h1>
+
+<img src= "<%=@gif.image_path%>">
+
+<%= form_tag(controller: "gifs", action: "favorite", method: "post") do %>
+  <%= submit_tag "Favorite" %>
+<% end %>

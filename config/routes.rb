@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+
+  root 'gifs#index'
+
+  get '/sign_up', to: 'users#new'
+
+  resources :users, only: [:create, :show]
+
+  get '/login', to: 'sessions#new'
+
+  post '/login', to: 'sessions#create'
+
+  resources :gifs, only: [:new, :create, :index, :show]
+
+  post 'gifs/:id/favorite', to: 'gifs#favorite'
+
+  resources :categories, only: [:new, :create, :index, :show, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

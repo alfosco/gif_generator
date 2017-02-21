@@ -1,0 +1,12 @@
+<h1>All Gifs</h1>
+
+<%= link_to "Add a Gif", new_gif_path %>
+
+<ul class="gif_list">
+  <%= @gifs.each do |gif| %>
+    <div>
+      <h3><%= link_to gif.title, gif_path(gif) %></h3>
+      <img src= "<%=gif.image_path%>">
+    </div>
+  <% end %>
+</ul>
